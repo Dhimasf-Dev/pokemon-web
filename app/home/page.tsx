@@ -1,6 +1,6 @@
-import HomePage from "./components/pages/HomePage";
+import HomePage from "../components/pages/HomePage";
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
-import getQueryClient from "./lib/getQueryClient";
+import getQueryClient from "../lib/getQueryClient";
 
 
 

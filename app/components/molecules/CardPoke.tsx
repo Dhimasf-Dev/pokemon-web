@@ -24,7 +24,7 @@ const CardPoke = ({ data, index, className, classNameBtn, title, onClick }: any)
         <Image 
           width={130} 
           height={130} 
-          src={`https://img.pokemondb.net/artwork/${data.pokemon || data.name}.jpg`} 
+          src={`${process.env.NEXT_PUBLIC_BASE_URL_IMAGE}${data.pokemon || data.name}.jpg`} 
           alt={data.name} 
         />
       </div>
