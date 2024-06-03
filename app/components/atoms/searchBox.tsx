@@ -9,7 +9,6 @@ interface SearchBoxProps {
 }
 
 const SearchBox = ({className}: SearchBoxProps) => {
-    // const results = useSelector((state: RootState) => state.searchPoke.results);
 
     const dispatch = useDispatch();
   

@@ -13,6 +13,7 @@ import {
 import { combineReducers } from 'redux';
 import pokeBagReducer from './reducers/pokeBagReducer';
 import searchPokeReducer from './reducers/searchPokeReducer';
+import authReducer from './reducers/authReducer';
 
 const persistConfig = {
     key: 'root',
@@ -23,6 +24,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
     pokeBag: pokeBagReducer,
     searchPoke: searchPokeReducer,
+    auth: authReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -5,6 +5,7 @@ import MainTemplates from '../../templates/MainTemplates'
 import { useQuery } from '@tanstack/react-query';
 import FirstSection from './firstSection';
 import SecondSection from './secondSection';
+import NewsSection from './newsSection';
 
 const HomePage = () => {
 
@@ -12,6 +13,7 @@ const HomePage = () => {
         <MainTemplates>
             <FirstSection />
             <SecondSection />
+            <NewsSection />
         </MainTemplates>
     )
 }
