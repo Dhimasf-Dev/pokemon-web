@@ -12,12 +12,13 @@ const NavBar = () => {
     const params = useParams()
     const arrowValidate = (!_.isEmpty(params.id) || !_.isEmpty(params.list)) ? "inline" : "hidden"
     const titlePokemon = !_.isEmpty(params) ? "hidden" : "inline"
+    const redirect = !_.isEmpty(params.detail) ? `/${params.list}` : '/'
 
     return (
         <div className='flex justify-between items-center p-7 bg-[#313131]'>
             <div className={`${titlePokemon} text-[#FFD436] text-shadow text-2xl font-bold`}>Pokemon</div>
             <div className={arrowValidate}>
-                <Link href="/">
+                <Link href={redirect}>
                     <ArrowLeftIconButton />
                 </Link>
             </div>

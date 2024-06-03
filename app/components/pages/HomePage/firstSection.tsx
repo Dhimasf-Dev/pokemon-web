@@ -34,10 +34,10 @@ const FirstSection = () => {
   },[]);;
 
   if (isLoading){
-    return <div>Loading...</div>
+    return <div className='loader relative left-[50%] my-20'></div>
   }
 
-  if (error) return 'An error has occurred: ' + error.message
+  if (error) return 'An error has occurred: '
 
   return (
     <div>

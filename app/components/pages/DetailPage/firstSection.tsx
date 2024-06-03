@@ -9,15 +9,19 @@ import { setQuery } from '@/app/redux/reducers/searchPokeReducer';
 import _ from 'lodash';
 import LabelType from '../../atoms/labelType';
 import Modal from '../../molecules/Modal';
+import { useParams } from 'next/navigation'
 
 const FirstSection = () => {
+  const params = useParams()
   const dispatch = useDispatch();
   const [isModal, setIsModal] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [limit, setLimit] = useState(10)
 
+  console.log(params)
+
   const fetchData = async () => {
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/pokemon/ivysaur?limit=${limit}`
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/pokemon/${params.detail}?limit=${limit}`
     
     const response = await axios.get(url);
     return response.data
@@ -57,8 +61,9 @@ const FirstSection = () => {
 
 
   if (isLoading){
-    return <div>Loading...</div>
+    return <div className='loader relative left-[50%] my-20'></div>
   }
+
 
 
   if (error) return 'An error has occurred: ' + error.message
@@ -80,7 +85,7 @@ const FirstSection = () => {
             title="Catch" 
             onClick={openModal}
             data={data} 
-            index={0} 
+            index={params.detail} 
           />
 
           <Modal 

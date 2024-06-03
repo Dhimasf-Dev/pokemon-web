@@ -1,15 +1,36 @@
 "use client"
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchBox from '../../atoms/searchBox'
 import CardPoke from '../../molecules/CardPoke'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/redux/store';
 import _ from 'lodash';
+import PokeBallIcon from '@/public/svgIcon/pokeBall';
 
 const MyPokeList = () => {
   const query = useSelector((state: RootState) => state.searchPoke.query);
   const myBag = useSelector((state: RootState) => state.pokeBag.pokeBag)
+  const [isLoading, setIsloading] = useState(true)
+
+  useEffect(() => {
+    myBag && setIsloading(false)
+  },[myBag])
+
+  if (isLoading){
+    return <div className='loader relative left-[50%] my-20'></div>
+  }
+
+  if (_.isEmpty(myBag)){
+    return (
+     <div className='flex flex-col justify-center items-center gap-6 mt-[50%]'>
+        <PokeBallIcon width='50px' height='50px' />
+        <div>
+          You didn't have Pokemon
+        </div>
+     </div>
+    )
+  }
 
   return (
     <div>

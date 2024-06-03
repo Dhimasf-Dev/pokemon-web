@@ -50,9 +50,8 @@ const FirstSection = () => {
   }
 
   if (isLoading){
-    return <div>Loading...</div>
+    return <div className='loader relative left-[50%] my-20'></div>
   }
-
 
   if (error) return 'An error has occurred: ' + error.message
 
@@ -66,7 +65,7 @@ const FirstSection = () => {
               !_.isEmpty(query) ?
               !_.isEmpty(data.filter((val:any) => val.name == query)) ?
               data.filter((val:any) => val.name == query).map((item:any, index:number) => (
-                <CardPoke onClick={() => handleRoutes(item.name)} data={item} index={index} key={index++} />
+                <CardPoke onClick={() => handleRoutes(item.name)} data={item} index={index + 1} key={index + 1} />
               ))
               :
               <div className='text-xl font-semibold'>
@@ -74,7 +73,7 @@ const FirstSection = () => {
               </div>
               :
               data.map((item:any, index:number) => (
-                <CardPoke onClick={() => handleRoutes(item.name)} title="Detail" classNameBtn="bg-[#1C53BA] text-white py-2 px-10" data={item} index={index} key={index++} />
+                <CardPoke onClick={() => handleRoutes(item.name)} title="Detail" classNameBtn="bg-[#1C53BA] text-white py-2 px-10" data={item} index={index + 1} key={index + 1} />
               ))
             }
           </div>
