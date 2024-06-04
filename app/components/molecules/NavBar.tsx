@@ -18,7 +18,7 @@ const NavBar = () => {
     const router = useRouter()
     const arrowValidate = (!_.isEmpty(params.id) || !_.isEmpty(params.list)) ? "inline" : "hidden"
     const titlePokemon = !_.isEmpty(params) ? "hidden" : "inline"
-    const redirect = !_.isEmpty(params.detail) ? `/${params.list}` : '/'
+    const redirect = !_.isEmpty(params.detail) ? `/${params.list}` : '/home'
 
     const handleLogOut = () => {
         dispatch(logout())
