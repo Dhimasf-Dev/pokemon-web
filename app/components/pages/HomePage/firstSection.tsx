@@ -41,7 +41,7 @@ const FirstSection = () => {
 
   return (
     <div>
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-5 mb-5'>
           <h1 className='text-2xl font-bold' >What Pokemon are you looking for?</h1>
           <SearchBox className='w-full'/>
 

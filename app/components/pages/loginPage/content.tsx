@@ -8,9 +8,8 @@ const Content = () => {
   return (
     <div>
         <div className='flex justify-center flex-col gap-5'>
-          <h1 className='text-2xl font-bold' >Register</h1>
-          <InputAuth page="register"/>
-
+          <h1 className='text-2xl font-bold' >Login</h1>
+          <InputAuth page="login"/>
         </div>
     </div>
   )

@@ -18,8 +18,6 @@ const FirstSection = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [limit, setLimit] = useState(10)
 
-  console.log(params)
-
   const fetchData = async () => {
     const url = `${process.env.NEXT_PUBLIC_BASE_URL}/pokemon/${params.detail}?limit=${limit}`
     
@@ -28,7 +26,6 @@ const FirstSection = () => {
   };
 
   
-
   const { data, isLoading, error, refetch} = useQuery({
     queryKey: ['pokemonDetail'],
     queryFn: () => fetchData(),

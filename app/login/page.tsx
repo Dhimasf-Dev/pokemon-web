@@ -1,17 +1,17 @@
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import getQueryClient from "../lib/getQueryClient";
-import RegisterPage from "../components/pages/registerPage";
+import LoginPage from '../components/pages/loginPage';
 
-const Register = () => {
+const Login = () => {
   const queryClient = getQueryClient();
   const dehydratedState = dehydrate(queryClient)
 
   return (
     <HydrationBoundary state={dehydratedState}>
-      <RegisterPage />
+      <LoginPage />
     </HydrationBoundary>
   );
 }
 
 
-export default Register
+export default Login

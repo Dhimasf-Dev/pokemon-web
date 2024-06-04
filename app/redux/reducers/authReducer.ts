@@ -26,7 +26,7 @@ const userSlice = createSlice({
       state.userLogin = []
     },
     setRegister(state, action: PayloadAction<UserObjState[]>) {
-      state.userLogin = action.payload;
+      state.userRegistered = action.payload;
     },
   },
 });
